@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState, useContext } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useContext,
+} from "react";
 import TimerSpan from "../../components/TypingProject/timer/TimerSpan";
 import Footer from "../../components/TypingProject/Footer/Footer";
 import TypingStatistics from "../../components/TypingProject/Statistics/TypingStatistics";
@@ -9,15 +15,24 @@ import {
   handleOnChangeInput,
 } from "../../components/TypingProject/Functions/functions";
 import CursorCarrotComp from "../../components/TypingProject/CursorCarotComp/CursorCarotComp";
-import { ActiveWordWithIndex, Data, Statistics } from "../../components/TypingProject/Types/types";
+import {
+  ActiveWordWithIndex,
+  Data,
+  Statistics,
+} from "../../components/TypingProject/Types/types";
 import AppContext from "../../components/AppContextFolder/AppContext";
 
 // let keyboardEvent; // this variable will hold the keyboard event callback function;
 export default function Home() {
   //  this general state will hold the data
-  const [myText, setMyText] = React.useState<Data>([[], [], { CursorPosition: 0 }]);
+  const [myText, setMyText] = React.useState<Data>([
+    [],
+    [],
+    { CursorPosition: 0 },
+  ]);
   // this state will hold the active word index and the word details
-  const [activeWordWithIndex, setActiveWordWithIndex] = useState<ActiveWordWithIndex>(null); // this state will hold the active word with its index in the quote
+  const [activeWordWithIndex, setActiveWordWithIndex] =
+    useState<ActiveWordWithIndex>(null); // this state will hold the active word with its index in the quote
   const [roundCounter, setRoundCounter] = useState<number>(0); // this state will hold the round counter
   const [isFinished, setIsFinished] = useState(false); // this state will hold when user finished typing
   const inputRef = useRef<HTMLInputElement>(null); // user input Ref
@@ -33,7 +48,10 @@ export default function Home() {
 
   //  this restart will be assigned again in each render only when roundCounter increase
   const restart = useCallback(() => {
-    document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
+    document.removeEventListener(
+      "keydown",
+      context.sharedState.typing.keyboardEvent
+    );
     console.log("event Listener is Removed!!!!!!!!!!");
     seconds.current = timeToType; // update the seconds to default value again
     getData(setMyText, setActiveWordWithIndex, setRoundCounter, roundCounter);
@@ -61,13 +79,20 @@ export default function Home() {
       context.sharedState.typing.eventInputLostFocus = () => {
         console.log("window is resized..Changing inputLostFocus height");
         if (absoluteTextINputRef.current?.style && inputLostFocus) {
-          absoluteTextINputRef.current.style.height = textInputRef.current.clientHeight + "px";
+          absoluteTextINputRef.current.style.height =
+            textInputRef.current.clientHeight + "px";
         }
       };
-      window.addEventListener("resize", context.sharedState.typing.eventInputLostFocus);
+      window.addEventListener(
+        "resize",
+        context.sharedState.typing.eventInputLostFocus
+      );
     } else {
       // delete event listener when it's Focused
-      window.removeEventListener("resize", context.sharedState.typing.eventInputLostFocus);
+      window.removeEventListener(
+        "resize",
+        context.sharedState.typing.eventInputLostFocus
+      );
     }
   }, [context.sharedState.typing, inputLostFocus]);
 
@@ -96,14 +121,20 @@ export default function Home() {
   useEffect(() => {
     if (isFinished) {
       console.log("event Listener added!!!");
-      document.addEventListener("keydown", context.sharedState.typing.keyboardEvent);
+      document.addEventListener(
+        "keydown",
+        context.sharedState.typing.keyboardEvent
+      );
     }
   }, [context.sharedState.typing.keyboardEvent, isFinished]);
 
   // this will handle new round conditions.
   useEffect(() => {
     console.log("event Listener is Removed!!!!!!!!!!");
-    document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
+    document.removeEventListener(
+      "keydown",
+      context.sharedState.typing.keyboardEvent
+    );
     if (inputRef.current?.value) {
       inputRef.current.value = "";
     }
@@ -115,7 +146,8 @@ export default function Home() {
   useEffect(() => {
     if (inputLostFocus) {
       if (absoluteTextINputRef.current?.style && inputLostFocus) {
-        absoluteTextINputRef.current.style.height = textInputRef.current.clientHeight + "px";
+        absoluteTextINputRef.current.style.height =
+          textInputRef.current.clientHeight + "px";
       }
     } else {
       inputRef.current?.focus();
@@ -126,13 +158,11 @@ export default function Home() {
   useEffect(() => {
     // remove the interval Cookie timer setter when
     if (typeof window !== "undefined") {
-      // remove the interval cookie timer setter of UserDataPuller
-      clearInterval(context.sharedState.userdata.timerCookieRef.current);
-      // remove UserDataPuller project EventListeners
-      window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker.current);
-      window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker.current, false);
       // remove Portfolio project NavBar EventListeners
-      window.removeEventListener("scroll", context.sharedState.portfolio.NavBar.IntervalEvent);
+      window.removeEventListener(
+        "scroll",
+        context.sharedState.portfolio.NavBar.IntervalEvent
+      );
       context.sharedState.portfolio.NavBar.IntervalEvent = null;
       context.sharedState.portfolio.NavBar.scrolling = null;
       context.sharedState.portfolio.NavBar.scrollSizeY = null;
@@ -155,7 +185,10 @@ export default function Home() {
         <>
           {/* Main page / Typing page */}
           <main className="w-full 2xl:px-96 xl:px-80 lg:px-64 md:px-28 px-12 flex flex-col justify-center items-center space-y-12">
-            <div ref={textInputRef} className="relative w-full h-full flex flex-col space-y-8  ">
+            <div
+              ref={textInputRef}
+              className="relative w-full h-full flex flex-col space-y-8  "
+            >
               {inputLostFocus && (
                 <div
                   onClick={() => {
@@ -165,14 +198,22 @@ export default function Home() {
                   className="absolute w-full z-10 bg-AAprimary opacity-90 rounded border-[0.5px] border-gray-700 flex justify-center items-center
                           hover:cursor-pointer"
                 >
-                  <span className="text-AAsecondary font-mono">Click here to continue..</span>
+                  <span className="text-AAsecondary font-mono">
+                    Click here to continue..
+                  </span>
                 </div>
               )}
               {/* Text : Wpm & Timer */}
               {isStartedTyping && (
                 <div className="w-full flex justify-between pb-8">
                   <span className="text-gray-400 md:text-xl text-sm ">
-                    {seconds.current == timeToType ? "0" : calculateWpm(myText[1], timeToType - seconds.current)} wpm
+                    {seconds.current == timeToType
+                      ? "0"
+                      : calculateWpm(
+                          myText[1],
+                          timeToType - seconds.current
+                        )}{" "}
+                    wpm
                   </span>
                   <TimerSpan
                     setIsFinished={setIsFinished}
@@ -195,28 +236,51 @@ export default function Home() {
                       {item.word.split("").map((char, i) => {
                         if (
                           char.localeCompare(" ") == 0 &&
-                          myText[1][item.indexFrom + i].charColor.localeCompare("text-AAError") == 0
+                          myText[1][item.indexFrom + i].charColor.localeCompare(
+                            "text-AAError"
+                          ) == 0
                         ) {
                           return (
                             <div key={i} className={`relative text-AAError`}>
-                              {i + item.indexFrom == myText[2].CursorPosition ? <CursorCarrotComp /> : <></>}
+                              {i + item.indexFrom ==
+                              myText[2].CursorPosition ? (
+                                <CursorCarrotComp />
+                              ) : (
+                                <></>
+                              )}
                               <div className="relative">
-                                &nbsp; <div className="absolute bottom-0 h-[3px] w-full bg-AAError"></div>
+                                &nbsp;{" "}
+                                <div className="absolute bottom-0 h-[3px] w-full bg-AAError"></div>
                               </div>
                             </div>
                           );
                         } else if (char.localeCompare(" ") == 0) {
                           return (
                             <div key={i} className="relative ">
-                              {i + item.indexFrom == myText[2].CursorPosition ? <CursorCarrotComp /> : <></>}
+                              {i + item.indexFrom ==
+                              myText[2].CursorPosition ? (
+                                <CursorCarrotComp />
+                              ) : (
+                                <></>
+                              )}
                               &nbsp;
                             </div>
                           );
                         } else {
                           return (
-                            <div key={i} className={`relative ${myText[1][item.indexFrom + i].charColor}`}>
+                            <div
+                              key={i}
+                              className={`relative ${
+                                myText[1][item.indexFrom + i].charColor
+                              }`}
+                            >
                               {char}
-                              {i + item.indexFrom == myText[2].CursorPosition ? <CursorCarrotComp /> : <></>}
+                              {i + item.indexFrom ==
+                              myText[2].CursorPosition ? (
+                                <CursorCarrotComp />
+                              ) : (
+                                <></>
+                              )}
                             </div>
                           );
                         }
@@ -236,13 +300,14 @@ export default function Home() {
                   }}
                   ref={inputRef}
                   type="text"
+                  aria-label="Typing input"
                   // ?INFORMATIONAL : uncomment the following line to see the input
                   // className="w-52 bg-AAprimary text-xl text-center text-gray-600 border-b-2 border-b-gray-600
                   //           py-2 px-4 focus:outline-none "
 
                   className="w-0 h-0 bg-AAprimary text-xl text-center text-gray-600  border-b-gray-600
                   py-2 px-4 focus:outline-none "
-                  onChange={e => {
+                  onChange={(e) => {
                     if (isStartedTyping == false) {
                       seIsStartedTyping(true);
                     }
@@ -258,7 +323,7 @@ export default function Home() {
                       updateStatistics
                     );
                   }}
-                  onKeyDownCapture={e => {
+                  onKeyDownCapture={(e) => {
                     // prevent cursor in input from jumping two characters
                     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
                       inputRef.current.setSelectionRange(
@@ -271,7 +336,10 @@ export default function Home() {
               </div>
             </div>
           </main>
-          <Footer className="absolute bottom-0" link="https://github.com/hktitof/Typing" />
+          <Footer
+            className="absolute bottom-0"
+            link="https://github.com/hktitof/Typing"
+          />
         </>
       )}
 

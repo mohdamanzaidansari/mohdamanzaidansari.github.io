@@ -1,36 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import rateLimit from "express-rate-limit";
-import DOMPurify from "isomorphic-dompurify";
 
-// Fixed Rate Limiting Configuration
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,
-  keyGenerator: req => {
-    // Get IP from headers (Vercel/Next.js specific)
-    const forwardedFor = req.headers["x-forwarded-for"];
-    const ip = Array.isArray(forwardedFor) ? forwardedFor[0] : forwardedFor?.split(",")[0];
-    return ip || req.socket.remoteAddress || "unknown-ip";
-  },
-  handler: (_, res) => {
-    res.status(429).json({ error: "Too many requests" });
-  },
-  validate: {
-    trustProxy: true, // Trust Vercel proxy
-  },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    // Apply rate limiting with proper typing
-    await new Promise<void>((resolve, reject) => {
-      limiter(req as any, res as any, (err?: unknown) => {
-        err ? reject(err) : resolve();
-      });
-    });
-
     // Validate HTTP method
     if (req.method !== "GET") {
       res.setHeader("Allow", ["GET"]);
@@ -73,27 +47,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Validate JSON schema
     const data = await response.json();
-    if (typeof data.content !== "string" || typeof data.authorSlug !== "string") {
+    if (
+      typeof data.content !== "string" ||
+      typeof data.authorSlug !== "string"
+    ) {
       throw new Error("Invalid API response structure");
     }
-
-    // Sanitize output
-    const cleanData = {
-      quote: DOMPurify.sanitize(data.content),
-      author: DOMPurify.sanitize(data.authorSlug),
-    };
 
     // Security headers
     res.setHeader("Content-Security-Policy", "default-src 'self'");
     res.setHeader("X-Content-Type-Options", "nosniff");
-    res.setHeader("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
+    res.setHeader(
+      "Strict-Transport-Security",
+      "max-age=63072000; includeSubDomains; preload"
+    );
     res.setHeader("Access-Control-Allow-Origin", "https://anaflous.com");
     res.setHeader("Access-Control-Allow-Methods", "GET");
 
-    return res.status(200).json(cleanData);
+    return res
+      .status(200)
+      .json({ quote: data.content, author: data.authorSlug });
   } catch (err) {
     console.error("API Error:", err);
-    const safeError = err instanceof Error ? err.message : "Unknown error";
     return res.status(500).json({ error: "Failed to fetch quote" });
   }
 }

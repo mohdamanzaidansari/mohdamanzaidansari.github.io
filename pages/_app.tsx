@@ -49,9 +49,6 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-  const timerCookie = useRef(null);
-  const windowSizeTrackerRef = useRef(null);
-  const mousePositionRef = useRef(null);
   const [sharedState, setSharedState] = useState({
     portfolio: {
       NavBar: {
@@ -62,11 +59,6 @@ function MyApp({ Component, pageProps }) {
       Scrolling: {
         IntervalEvent: null,
       },
-    },
-    userdata: {
-      timerCookieRef: timerCookie,
-      windowSizeTracker: windowSizeTrackerRef,
-      mousePositionTracker: mousePositionRef,
     },
     typing: {
       keyboardEvent: null,

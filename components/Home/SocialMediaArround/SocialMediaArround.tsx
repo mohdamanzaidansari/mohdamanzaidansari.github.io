@@ -46,8 +46,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
               Icon={LinkedinIcon}
               href={"https://www.linkedin.com/in/mohd-aman-zaid/"}
             />
-            {/* Instagram Icon */}
-            {/* <IconClickableWithAnimation Icon={InstagramIcon} href={"https://www.instagram.com/xredme/"} /> */}
+
             {/* Email Icon */}
             {/* <IconClickableWithAnimation
               Icon={EmailIcon}

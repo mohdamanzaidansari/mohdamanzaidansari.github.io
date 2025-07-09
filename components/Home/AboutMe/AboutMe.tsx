@@ -1,13 +1,13 @@
 import React from "react";
 import Img from "../../../components/smallComp/image/Img"; // Assuming this path is correct for your project
 import ArrowIcon from "../../../components/Icons/ArrowIcon"; // Assuming this path is correct for your project
-import { forwardRef } from "react";
+
 interface AboutMeProps {
   // Define any props you might pass to AboutMe here
   // For example: profileImageUrl?: string;
 }
 
-const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
+const AboutMe = (props: AboutMeProps) => {
   const technologies = [
     [
       "React.js/Next.js",
@@ -153,7 +153,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
             <div className="absolute w-48 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
             <div className="absolute w-48 h-full rounded overflow-hidden">
               <Img
-                src={"/img/Portfolio-portrait-3.jpg"}
+                src={"/img/DP.png"}
                 className={"object-contain rounded-lg"}
                 alt="My Image Not Found"
               />
@@ -164,6 +164,5 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
       </div>
     </div>
   );
-});
-AboutMe.displayName = "AboutMe";
+};
 export default AboutMe; // Changed to a const for functional component definition with type

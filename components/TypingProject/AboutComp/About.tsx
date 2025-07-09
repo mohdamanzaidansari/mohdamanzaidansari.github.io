@@ -1,4 +1,4 @@
-import Img from "..//Image/Img";
+import Img from "../../smallComp/image/Img";
 export default function About() {
   return (
     <div
@@ -17,11 +17,16 @@ export default function About() {
           What&apos;s this project for?
         </span>
         <span className="font-sans italic  sm:text-base text-sm text-gray-400 text-center">
-          Most jobs do not explicitly require certain typing speeds, but that&apos;s because basic typing skills are
-          taken as a given. Thus, you should{" "}
-          <span className="font-bold text-gray-300">aim for a typing speed of at least 40 WPM</span> to keep up a
-          standard level of efficiency at work..However this project aim to help you to improve your typing speed by
-          tracking your progress in each round and give you a score based on your typing speed and accuracy.
+          Most jobs do not explicitly require certain typing speeds, but
+          that&apos;s because basic typing skills are taken as a given. Thus,
+          you should{" "}
+          <span className="font-bold text-gray-300">
+            aim for a typing speed of at least 40 WPM
+          </span>{" "}
+          to keep up a standard level of efficiency at work..However this
+          project aim to help you to improve your typing speed by tracking your
+          progress in each round and give you a score based on your typing speed
+          and accuracy.
         </span>
       </div>
     </div>
