@@ -39,16 +39,26 @@ export default function Home() {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="647" />
+        <meta property="og:image:height" content="647" />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:image:alt"
+          content="Aman Zaid - Senior Software Engineer"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@mohdamanzaidansari" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <meta
+          name="twitter:image:alt"
+          content="Aman Zaid - Senior Software Engineer"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/img/DP.png" />
         <link rel="apple-touch-icon" href="/img/DP.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
