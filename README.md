@@ -2,166 +2,119 @@
   <img alt="Logo" src="https://user-images.githubusercontent.com/62770500/199333052-3cd38b31-7e77-4883-a1ff-a037afcc0492.png" width="100" />
 </div>
 <h1 align="center">
-  anaflous.com - v1
+  Aman Zaid - Portfolio Website
 </h1>
 <p align="center">
-  The first iteration of <a href="https://anaflous.com" target="_blank">anaflous.com</a> built with <a href="https://nextjs.org/" target="_blank">Nextjs</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+  Personal portfolio website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
 </p>
 
-<p align="center">
-  <a href="https://my-website-ten-sage.vercel.app/" target="_blank">
-    <img src="https://raw.githubusercontent.com/DataDog/integrations-extras/master/vercel/images/logo-full-black.png" width="100" alt="Vercel Status" />
-  </a>
-</p>
+## 🚀 About this repo
 
-## ![demo](https://user-images.githubusercontent.com/62770500/199337431-d632cc3c-12fb-40db-8f96-0d5e55555579.png)
+This is Aman Zaid's personal portfolio website showcasing his work experience, projects, and skills as a Senior Software Engineer. The website is built with modern web technologies and features a clean, responsive design.
 
-## 🚨 About this repo (please read!)
+### Features
 
-### 🚀 Latest Update
-
-I can’t believe my portfolio now has over 200 visitors each day! It’s incredibly rewarding to see talented people using my work as inspiration for their own projects. I'm thrilled to contribute to the open-source community and am happy to see my portfolio making an impact!
-
-You can use this code for your own website, but please with attribution 😊.
-
-Please note that the design of the website is inspired from "brittanychiang.com", but didn't copied even a single piece of code from brittanyching repo, However, i built the portfolio from scratch with different technolgoies, like `Tailwind CSS` and `Framer Motion` and i added some other functionalities to it, so it might seems the same, but believe me i did a lot of work the code, website and how it works is entirely different!!!!. If you have questions about implementation, please refer to the [Next.js DOCS](https://nextjs.org/docs) same thing for Tailwind CSS and Framer Motion check out the Documentation, Or you can simply reach to me directly.
-
-I'd like to highlight that the `This website can't be reached` trick featured on my portfolio is an `original idea` and not borrowed from any other source. It's intended as a playful element, reflecting my sense of humor. While I acknowledge that it might not be the most user-friendly approach. Through careful observation, I've calculated that the average reaction time is 2 seconds before users realize the playful nature of the message, at which point the content becomes accessible. It's a quirky touch meant to add a lighthearted element to the user experience.
+- **Responsive Design**: Works seamlessly across all devices
+- **Modern UI**: Clean and professional design with smooth animations
+- **Performance Optimized**: Fast loading times and optimized assets
+- **SEO Friendly**: Proper meta tags and structured content
+- **Accessible**: Built with accessibility best practices
 
 ---
 
 ### Table of Contents
 
 - [Description](#description)
+- [Technologies Used](#technologies--libraries)
 - [How To Use](#how-to-use)
 - [🎨 Color Reference](#references)
 - [License](#license)
-- [Author Info](#author-info)
 
 ---
 
 ## Description
 
-Without a doubt a portfolio website is a unique way to showcase your work and let others know about yourself. It’s like an evergreen platform for your projects, case studies, and information about you. However, Why why did i choose Next.js? Because it is a React framework with Server-Side Rendering, which is good for SEO (Good for us if we get found on Google, right?).
+A modern portfolio website built with Next.js and TypeScript, featuring:
 
-Also, Next.js helps us build a full back-end & blazing-fast websites along with benefits such as Image optimization.
+- **Home Section**: Introduction and hero content
+- **About Section**: Personal background and skills
+- **Work Experience**: Detailed work history with company descriptions
+- **Projects**: Showcase of built applications and contributions
+- **Contact**: Multiple ways to get in touch
 
-Why tailwindcss? Because TailwindCSS is a framework which reduces a lot of styling efforts. It has low level CSS classes that you can directly embed into the HTML code.
+The website uses server-side rendering for optimal SEO performance and includes smooth animations powered by Framer Motion.
 
 ---
 
 ## Technologies & libraries
 
-Since i integrated some of my project into my website i'll i mention most of technologies & libraries that i used.
-
-- Next.js
-- Nodejs
-- TypeScript
-- Tailwind CSS
-- framer-motion
-- Google API
-- cookie-cutter
-- react-leaflet
-- Vercel Analytics
-- Google Analytics
-
-##### Note :
-
-##### You can find the rest of packages in the file `/package.json`
+- **Framework**: Next.js 13+ with TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Custom SVG components
+- **Analytics**: Google Analytics
+- **Deployment**: Vercel (recommended)
 
 ---
 
 ### How To Use
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [anaflous.com](https://anaflous.com). Thanks!
-
 ## 🛠 Installation & Set Up
 
-1. Clone the repo CLI
+1. Clone the repo
 
    ```sh
-   git clone https://github.com/hktitof/my-website.git
+   git clone <your-repo-url>
+   cd my-website
    ```
 
-2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
+2. Install dependencies
 
    ```sh
-   nvm install
+   npm install
+   # or
+   yarn install
+   # or
+   bun install
    ```
 
-3. Install dependencies
+3. Start the development server
 
    ```sh
-   yarn
-   ```
-
-4. (OPTIONAL) : Add .env file to the root project
-
-```bash
-    touch .env
-```
-
-5.  (OPTIONAL) : Add your Google API key inside .env file.
-
-###### **_Note :_**
-
-###### not Adding Google API to the project will cause not returning the correct zip code, it might be always "00000"
-
-###### make sure you enabled Geolocation to this API
-
-```Javascript
-    NEXT_PUBLIC_KEY_GOOGLE_API="your API key"
-```
-
-6. Start the development server
-
-   ```sh
+   npm run dev
+   # or
    yarn dev
+   # or
+   bun dev
    ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## 🚀 Building and Running for Production
 
-1. Generate a full static production build
+1. Generate a production build
 
    ```sh
+   npm run build
+   # or
    yarn build
+   # or
+   bun run build
    ```
 
-1. Preview the site as it will appear once deployed
+2. Start the production server
 
    ```sh
-   yarn run serve
+   npm run start
+   # or
+   yarn start
+   # or
+   bun run start
    ```
 
 ---
 
-## API Description :
-
-##### Endpoint 1 :
-
-the following endpoint will return a json object contains "quote" and "author", for SpeedTyping project i displayed only the quote, **minLength** is considered as the minimum of characters.
-
-```api
-    /api/typing/[minLength]
-```
-
-##### notes :
-
-- **_minLength_** should be between 10 - 300.
-- the returned quote is a chain of
-- i costumized the original Endpoint using The API Route of Nextjs, here is the Original Endpoint.
-
-##### Original Endpiont :
-
-###### URL :
-
-```api
-    https://api.quotable.io/random?minLength=[minLength]
-```
-
----
-
-## References
+## 🎨 Color Reference
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
@@ -180,7 +133,7 @@ the following endpoint will return a json object contains "quote" and "author", 
 
 MIT License
 
-Copyright (c) [2022] [Abdellatif Anaflous]
+Copyright (c) [2024] [Aman Zaid]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -199,12 +152,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-## Author Info
-
-- Linkedin - [@abdellatif-anaflous](https://www.linkedin.com/in/abdellatif-anaflous/)
-- Website - [Abdellatif Anaflous](https://anaflous.com)
-
-[Back To The Top](#description) :
