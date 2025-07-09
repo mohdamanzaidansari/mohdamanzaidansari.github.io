@@ -19,14 +19,8 @@ const MyName: React.FC<MyNameProps> = (props) => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: {
-            delay: props.finishedLoading ? 0 : 10.4,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
-          y: {
-            delay: props.finishedLoading ? 0 : 10.4,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
+          opacity: { duration: 0.2 },
+          y: { duration: 0.2 },
         }}
         className="text-AAsecondary font-mono"
       >
@@ -36,14 +30,8 @@ const MyName: React.FC<MyNameProps> = (props) => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: {
-            delay: props.finishedLoading ? 0 : 10.5,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
-          y: {
-            delay: props.finishedLoading ? 0 : 10.5,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
+          opacity: { duration: 0.2 },
+          y: { duration: 0.2 },
         }}
         className="text-gray-300 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
@@ -53,14 +41,8 @@ const MyName: React.FC<MyNameProps> = (props) => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: {
-            delay: props.finishedLoading ? 0 : 10.6,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
-          y: {
-            delay: props.finishedLoading ? 0 : 10.6,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
+          opacity: { duration: 0.2 },
+          y: { duration: 0.2 },
         }}
         className="text-gray-400 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
@@ -71,14 +53,8 @@ const MyName: React.FC<MyNameProps> = (props) => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: {
-            delay: props.finishedLoading ? 0 : 10.7,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
-          y: {
-            delay: props.finishedLoading ? 0 : 10.7,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
+          opacity: { duration: 0.2 },
+          y: { duration: 0.2 },
         }}
         className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
       >
@@ -97,9 +73,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
           <span className="text-AAsecondary keyword-hover">accessible</span>,
           and{" "}
           <span className="text-AAsecondary keyword-hover">user-friendly</span>{" "}
-          digital products.
-          {/* <br className="3xl:block hidden" /> */}
-          With strong{" "}
+          digital products. With strong{" "}
           <span className="text-AAsecondary keyword-hover">
             problem-solving skills
           </span>
@@ -108,7 +82,6 @@ const MyName: React.FC<MyNameProps> = (props) => {
             complex challenges
           </span>
           , leading teams, and transforming ideas into intuitive experiences.{" "}
-          {/* <br className="3xl:block hidden" /> */}
           Driven by{" "}
           <span className="text-AAsecondary keyword-hover">
             engineering best practices{" "}
@@ -124,18 +97,12 @@ const MyName: React.FC<MyNameProps> = (props) => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: {
-            delay: props.finishedLoading ? 0 : 10.8,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
-          y: {
-            delay: props.finishedLoading ? 0 : 10.8,
-            duration: props.finishedLoading ? 0 : 0.2,
-          },
+          opacity: { duration: 0.2 },
+          y: { duration: 0.2 },
         }}
         className="mt-12"
       >
-        <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
+        <a href={"/Aman_Zaid_Resume.pdf"} target={"_blank"} rel="noreferrer">
           <button className="bg-AAprimary text-AAsecondary border rounded px-4 sm:px-8 py-3 sm:py-4 border-AAsecondary transition-transform duration-300 ease-out resume-button-hover">
             Check out my resume!
           </button>

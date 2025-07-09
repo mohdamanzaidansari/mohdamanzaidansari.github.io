@@ -30,10 +30,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
         initial={{ y: "100%" }}
         animate={{ y: "0%" }}
         transition={{
-          y: {
-            delay: props.finishedLoading ? 0 : 11,
-            duration: props.finishedLoading ? 0 : 0.5,
-          },
+          y: { duration: 0.5 },
         }}
         className="z-10 fixed bottom-0 left-0  hidden lg:flex flex-row px-12 items-center justify-between  "
       >
@@ -65,12 +62,8 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
       <motion.div
         initial={{ y: "170%" }}
         animate={{ y: "0%" }}
-        // ! change delay from 0 to 11
         transition={{
-          y: {
-            delay: props.finishedLoading ? 0 : 11,
-            duration: props.finishedLoading ? 0 : 0.5,
-          },
+          y: { duration: 0.5 },
         }}
         className="z-10 fixed bottom-0 -right-10 hidden lg:flex flex-row items-center justify-between"
       >
