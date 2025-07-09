@@ -23,7 +23,7 @@ const IconClickableWithAnimation = (props) => {
     </motion.div>
   );
 };
-export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
+export default function SocialMediaEmail() {
   return (
     <>
       <motion.div

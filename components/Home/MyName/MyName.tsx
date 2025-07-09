@@ -3,11 +3,7 @@ import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import Link from "next/link"; // Link component is imported but not used in this snippet. Remove if not needed elsewhere.
 import { useRouter } from "next/router"; // useRouter is imported but not used. Remove if not needed.
 
-interface MyNameProps {
-  finishedLoading: boolean;
-}
-
-const MyName: React.FC<MyNameProps> = (props) => {
+const MyName: React.FC = () => {
   // const router = useRouter(); // Not used currently
 
   return (
@@ -114,7 +110,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
       {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: props.finishedLoading ? 0 : 11, duration: 0.5 }}
+        transition={{ delay: 0, duration: 0.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-AAsecondary"
         // style={{ bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)' }} // Alternative to Tailwind classes
       >

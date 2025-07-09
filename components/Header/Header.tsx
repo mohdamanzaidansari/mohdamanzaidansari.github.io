@@ -1,25 +1,21 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Logo from "./Headercomp/Logo";
 import DesktopMenu from "./Headercomp/DesktopMenu";
 import IconMenu from "./Headercomp/IconMenu";
 import MobileMenu from "./Headercomp/MobileMenu";
 import { motion } from "framer-motion";
-import AppContext from "../AppContextFolder/AppContext";
 
-const addClass = (ref: any, myclass: string) => {
-  ref.current?.classLIst.add(myclass);
-};
-const Header = (props: { finishedLoading: boolean }) => {
+const Header = () => {
   const RefNavBar = useRef<HTMLDivElement>(null);
   const [ShowElement, setShowElement] = useState(true);
   const [rotate, setRotate] = useState<boolean>(false);
-  const context = useContext(AppContext);
   const scrollSizeY = useRef<number>(0);
+  const intervalEventRef = useRef<(() => void) | null>(null);
 
   // Define the EventListener for the NavBar
   useEffect(() => {
-    if (context.sharedState.portfolio.NavBar.IntervalEvent == null) {
-      context.sharedState.portfolio.NavBar.IntervalEvent = () => {
+    if (intervalEventRef.current == null) {
+      intervalEventRef.current = () => {
         if (scrollSizeY.current == 0) {
           scrollSizeY.current = window.scrollY;
         } else {
@@ -39,28 +35,22 @@ const Header = (props: { finishedLoading: boolean }) => {
         console.log("Scrolling checking for NavBar ", scrollSizeY.current);
       };
     }
-  }, [
-    context.sharedState.portfolio.NavBar,
-    context.sharedState.portfolio.NavBar.IntervalEvent,
-  ]);
+  }, []);
 
   //Adding the EventListener for the NavBar
   useEffect(() => {
-    if (context.sharedState.portfolio.NavBar.scrolling == null) {
-      context.sharedState.portfolio.NavBar.scrolling = true;
-      scrollSizeY.current = 0;
-      //Hide when scroll down & show when scroll up
-      if (typeof window !== "undefined") {
-        window.addEventListener(
-          "scroll",
-          context.sharedState.portfolio.NavBar.IntervalEvent
-        );
-      }
+    scrollSizeY.current = 0;
+    //Hide when scroll down & show when scroll up
+    if (typeof window !== "undefined" && intervalEventRef.current) {
+      window.addEventListener("scroll", intervalEventRef.current);
     }
-  }, [
-    context.sharedState.portfolio.NavBar,
-    context.sharedState.portfolio.NavBar.scrolling,
-  ]);
+
+    return () => {
+      if (typeof window !== "undefined" && intervalEventRef.current) {
+        window.removeEventListener("scroll", intervalEventRef.current);
+      }
+    };
+  }, []);
 
   console.log("rotate from header : ", rotate);
   //veify document for serverSide rendering
@@ -91,7 +81,7 @@ const Header = (props: { finishedLoading: boolean }) => {
       justify-between px-6 sm:px-12 py-2 sm:py-4  transition duration-4000 translate-y-0 z-20`}
       >
         {/* Logo A */}
-        <Logo finishedLoading={props.finishedLoading} />
+        <Logo />
 
         {/* Hide icon Designed by me */}
 
@@ -100,11 +90,10 @@ const Header = (props: { finishedLoading: boolean }) => {
           setRotate={setRotate}
           setShowElement={setShowElement}
           ShowElement={ShowElement}
-          finishedLoading={props.finishedLoading}
         />
 
         {/* ? Desktop Menu by Titof */}
-        <DesktopMenu finishedLoading={props.finishedLoading} />
+        <DesktopMenu />
       </motion.div>
     </>
   );

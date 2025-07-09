@@ -2,8 +2,7 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import AppContext from "../components/AppContextFolder/AppContext";
-import { useRef, useState, useEffect } from "react";
+import { useEffect } from "react";
 // import NEXT_PUBLIC_GA_TRACKING_ID form .env
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 // global.d.ts
@@ -49,29 +48,13 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-  const [sharedState, setSharedState] = useState({
-    portfolio: {
-      NavBar: {
-        IntervalEvent: null,
-        scrolling: null,
-        scrollSizeY: null,
-      },
-      Scrolling: {
-        IntervalEvent: null,
-      },
-    },
-    typing: {
-      keyboardEvent: null,
-      eventInputLostFocus: null,
-    },
-    finishedLoading: false,
-  });
+
   return (
-    <AppContext.Provider value={{ sharedState, setSharedState }}>
+    <>
       <SpeedInsights />
       <Component {...pageProps} />
       <Analytics />
-    </AppContext.Provider>
+    </>
   );
 }
 
