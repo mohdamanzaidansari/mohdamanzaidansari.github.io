@@ -8,8 +8,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? "/my-website" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/my-website/" : "",
 };
 
 module.exports = nextConfig;

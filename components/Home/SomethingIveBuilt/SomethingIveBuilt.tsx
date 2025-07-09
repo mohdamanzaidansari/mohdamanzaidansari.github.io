@@ -66,7 +66,7 @@ export default function SomethingIveBuilt() {
         {/* // TODO : to here  */}
         {/* // ?  Project  1 Ens Vision */}
         <ProjectCard
-          imageSrc="img/HubstarConnect.png"
+          imageSrc="/img/HubstarConnect.png"
           imageAlt="Project Screen shot"
           projectUrl="https://www.hubstar.com/solutions/connect"
           projectTitle="Hubstar connect"
@@ -118,7 +118,7 @@ export default function SomethingIveBuilt() {
 
         {/* // ?  Project  3*/}
         <ProjectCard
-          imageSrc="img/UroSecure.png"
+          imageSrc="/img/UroSecure.png"
           imageAlt="Project Screen shot"
           projectUrl="http://secureme.urosecure.com/"
           projectTitle="UroSecure"
