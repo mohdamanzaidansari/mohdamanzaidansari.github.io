@@ -39,8 +39,8 @@ export default function Home() {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
-        <meta property="og:image:width" content="647" />
-        <meta property="og:image:height" content="647" />
+        <meta property="og:image:width" content="1254" />
+        <meta property="og:image:height" content="1254" />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:image:alt"
