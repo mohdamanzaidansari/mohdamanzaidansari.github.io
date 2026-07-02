@@ -16,19 +16,21 @@ const AboutMe = (props: AboutMeProps) => {
       "Redux/TanStack Query",
       "Tailwind CSS",
       "JavaScript(ES6)/TypeScript",
+      "Hono/HTMX/Alpine.js",
       "Accessibility (a11y)",
       "Internationalization (i18n)",
       "OpenLayers/Mirage.js/XState",
     ],
     [
-      "Node.js/Express.js",
+      "Node.js/Express.js/Nest.js",
+      "Bun / Edge SSR & Streaming",
       "Python/Django",
-      "MongoDB/PostgreSQL",
-      "AWS",
+      "MongoDB/PostgreSQL/MySQL",
+      "AWS (S3, SQS)",
       "Jest/QUnit/Cypress",
+      "AI-Assisted Dev (Cursor, Claude)",
       "Flutter/Firebase",
-      "CI/CD (Jenkins)",
-      "Caching/Performance",
+      "CI/CD (Jenkins) · Caching",
       "Test-Driven Development (TDD)",
     ],
   ];
@@ -73,10 +75,10 @@ const AboutMe = (props: AboutMeProps) => {
             </div>
 
             <div className="font-Header text-gray-400 text-justify">
-              Over the past <span className="text-AAsecondary">4+ years</span>,
+              Over the past <span className="text-AAsecondary">5+ years</span>,
               I’ve worked on high-impact products across multiple domains — from
-              workspace scheduling and logistics to education and visa
-              processing. I’ve led a development team on{" "}
+              storefront commerce and workspace scheduling to logistics,
+              education, and visa processing. I’ve led a development team on{" "}
               <span className="text-AAsecondary">HubStar Connect</span>, used by
               clients like the{" "}
               <span className="text-AAsecondary">
@@ -96,8 +98,10 @@ const AboutMe = (props: AboutMeProps) => {
             <div className="font-Header text-gray-400 text-justify">
               What drives me is solving tough problems and constantly{" "}
               <span className="text-AAsecondary">learning new things</span> —
-              whether it’s refining state management with XState, designing{" "}
-              dynamic form engines, or exploring{" "}
+              whether it’s architecting{" "}
+              <span className="text-AAsecondary">edge‑rendering engines</span>,
+              refining state management with XState, designing dynamic form
+              engines, or exploring{" "}
               <span className="text-AAsecondary">
                 clean architecture principles
               </span>

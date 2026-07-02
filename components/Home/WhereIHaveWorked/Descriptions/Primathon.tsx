@@ -5,11 +5,11 @@ import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 export default function Primathon() {
   const tasks = [
     {
-      text: "Leading a team on HubStar Connect (formerly Smartway2), an enterprise SaaS workspace scheduling app with notable clients like the UK Government’s Home Ministry.",
+      text: "Led a team on HubStar Connect (formerly Smartway2), an enterprise SaaS workspace scheduling app with notable clients like the UK Government’s Home Office.",
       keywords: [
         "HubStar Connect",
-        "UK Government’s Home Ministry",
-        "Leading a team",
+        "UK Government’s Home Office",
+        "Led a team",
       ],
     },
     {
@@ -49,12 +49,12 @@ export default function Primathon() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
-            Senior Software Engineer{" "}
+            Senior Software Engineer — HubStar Connect{" "}
             <span className="text-AAsecondary">@ Primathon</span>
           </span>
           {/* Location and Date */}
           <span className="font-mono text-xs text-gray-500">
-            Gurgaon, India · Apr 2024 - Present
+            Gurgaon, India · Apr 2024 - June 2025
           </span>
           <span
             className="font-mono text-xs text-AAsecondary hover:cursor-pointer"

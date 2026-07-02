@@ -19,7 +19,7 @@ export default function Home() {
   console.log("website is rendering...");
   const meta = {
     title: "Aman Zaid - Senior Software Engineer",
-    description: `I've been working on Software development for more than 4 years. Get in touch with me to know more.`,
+    description: `I've been working on Software development for more than 5 years. Get in touch with me to know more.`,
     image: "https://mohdamanzaidansari.github.io/img/DP.png",
     type: "website",
     url: "https://mohdamanzaidansari.github.io",

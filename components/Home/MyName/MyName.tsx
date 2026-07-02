@@ -59,7 +59,7 @@ const MyName: React.FC = () => {
           <span className="text-AAsecondary keyword-hover">
             Senior Software Engineer
           </span>{" "}
-          with 4+ years of experience in{" "}
+          with 5+ years of experience in{" "}
           <span className="text-AAsecondary keyword-hover">frontend</span> and{" "}
           <span className="text-AAsecondary keyword-hover">
             full-stack development

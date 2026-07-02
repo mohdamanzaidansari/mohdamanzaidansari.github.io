@@ -15,12 +15,15 @@ import Yocket from "./Descriptions/Yocket";
 import PrimathonPrev from "./Descriptions/PrimathonPrev";
 import CannyAlleyTech from "./Descriptions/CannyAlleyTech";
 import Primathon2023 from "./Descriptions/Primathon2023";
+import Storefront from "./Descriptions/Storefront";
 export default function WhereIHaveWorked() {
   const barRef = React.useRef<HTMLDivElement>(null);
   // ? INFORMATIONAL control the green position using px,
   // ? INFORMATIONAL the default value of barRef's class should be at the beginning translate-y-[0px]
   const GetDescription = () => {
     switch (DescriptionJob) {
+      case "Storefront":
+        return <Storefront />;
       case "Primathon":
         return <Primathon />;
       case "Primathon2023":
@@ -33,7 +36,7 @@ export default function WhereIHaveWorked() {
         return <CannyAlleyTech />;
     }
   };
-  const [DescriptionJob, setDescriptionJob] = React.useState("Primathon");
+  const [DescriptionJob, setDescriptionJob] = React.useState("Storefront");
   return (
     <div
       data-aos="fade-up"
@@ -68,12 +71,13 @@ export default function WhereIHaveWorked() {
 }
 
 const CompaniesBar = (props) => {
-  const [barPosition, setBarPosition] = React.useState<Number>(-8); // Primathon at the top
+  const [barPosition, setBarPosition] = React.useState<Number>(-8); // Storefront at the top
   const [barAbovePosition, setBarAbovePosition] = React.useState<Number>(0);
   const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] =
     React.useState<boolean[]>([
-      true, // Primathon selected by default
-      false, // Primathon2023
+      true, // Storefront selected by default
+      false, // Primathon (HubStar)
+      false, // Primathon2023 (Documitra)
       false, // Yocket
       false, // PrimathonPrev
       false, // Canny Alley Tech
@@ -126,54 +130,106 @@ const CompaniesBar = (props) => {
       {/* // ? Companies name as buttons */}
       <div className="flex flex-col md:order-2 order-1 space-y-1 pl-8 md:pl-0 ">
         <div className="flex flex-row md:flex-col">
-          {/* Primathon at the top */}
+          {/* Storefront Builder (current) at the top */}
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={0}
             CompanyName="Primathon"
             BarPosition={-10}
             BarAvobePosition={1}
-            DescriptionJob="Primathon"
-            CompanyNameBackgroundColorGreen={[true, false, false, false, false]}
+            DescriptionJob="Storefront"
+            CompanyNameBackgroundColorGreen={[
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+            ]}
             setDescriptionJob={props.setDescriptionJob}
           />
-          {/* Primathon2023 as second */}
+          {/* Primathon (HubStar) as second */}
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={1}
             CompanyName="Primathon"
-            BarPosition={36}
+            BarPosition={34}
             BarAvobePosition={128}
-            DescriptionJob="Primathon2023"
-            CompanyNameBackgroundColorGreen={[false, true, false, false, false]}
+            DescriptionJob="Primathon"
+            CompanyNameBackgroundColorGreen={[
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+            ]}
             setDescriptionJob={props.setDescriptionJob}
           />
-          {/* Yocket as third */}
+          {/* Primathon2023 (Documitra) as third */}
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={2}
-            CompanyName="Yocket"
-            BarPosition={80}
+            CompanyName="Primathon"
+            BarPosition={78}
             BarAvobePosition={256}
-            DescriptionJob="Yocket"
-            CompanyNameBackgroundColorGreen={[false, false, true, false, false]}
+            DescriptionJob="Primathon2023"
+            CompanyNameBackgroundColorGreen={[
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+            ]}
             setDescriptionJob={props.setDescriptionJob}
           />
-          {/* PrimathonPrev as fourth */}
+          {/* Yocket as fourth */}
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={3}
-            CompanyName="Primathon"
-            BarPosition={125}
+            CompanyName="Yocket"
+            BarPosition={122}
             BarAvobePosition={384}
+            DescriptionJob="Yocket"
+            CompanyNameBackgroundColorGreen={[
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+            ]}
+            setDescriptionJob={props.setDescriptionJob}
+          />
+          {/* PrimathonPrev as fifth */}
+          <CompanyButton
+            ButtonOrderOfcompanyNameBackgroundColorGreen={4}
+            CompanyName="Primathon"
+            BarPosition={166}
+            BarAvobePosition={512}
             DescriptionJob="PrimathonPrev"
-            CompanyNameBackgroundColorGreen={[false, false, false, true, false]}
+            CompanyNameBackgroundColorGreen={[
+              false,
+              false,
+              false,
+              false,
+              true,
+              false,
+            ]}
             setDescriptionJob={props.setDescriptionJob}
           />
           {/* Canny Alley Tech after PrimathonPrev */}
           <CompanyButton
-            ButtonOrderOfcompanyNameBackgroundColorGreen={4}
+            ButtonOrderOfcompanyNameBackgroundColorGreen={5}
             CompanyName="Canny Alley Tech"
-            BarPosition={168}
-            BarAvobePosition={512}
+            BarPosition={210}
+            BarAvobePosition={640}
             DescriptionJob="CannyAlleyTech"
-            CompanyNameBackgroundColorGreen={[false, false, false, false, true]}
+            CompanyNameBackgroundColorGreen={[
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+            ]}
             setDescriptionJob={props.setDescriptionJob}
           />
         </div>

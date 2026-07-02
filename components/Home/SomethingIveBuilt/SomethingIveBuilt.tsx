@@ -64,6 +64,23 @@ export default function SomethingIveBuilt() {
 
       <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
         {/* // TODO : to here  */}
+        {/* // ?  Project 0 - Storefront Builder / ShopForge */}
+        <ProjectCard
+          imageSrc="/img/ShopForge.png"
+          imageAlt="Project Screen shot"
+          projectUrl="https://primathon.in/"
+          projectTitle="Storefront Builder"
+          projectSubtitle="No-Code Storefront Editor & Edge-Rendering Engine"
+          description="At Primathon, I own the merchant-site editing experience end-to-end — a visual no-code editor where merchants customize storefronts, generate sections, and build pages against live previews via a custom editor-bridge and iframe messaging layer. I engineered a template-JSON pipeline that moves structure, content, and styling out of hardcoded JSX into runtime-interpreted data, enabling live edits with no redeploy. I also architected ShopForge, a next-gen edge-rendering engine using interpreted SSR templating with HTML streamed by Hono and HTMX + Alpine, hitting sub-100ms TTFB. Merchants on the platform have seen ₹6–10 crore in additional annual sales, up to ₹30 crore ($3.5M) at best."
+          technologies={[
+            "Edge SSR & Streaming",
+            "Hono/HTMX/Alpine",
+            "Template-JSON Engine",
+          ]}
+          isReversed={false}
+          router={router}
+        />
+
         {/* // ?  Project  1 Ens Vision */}
         <ProjectCard
           imageSrc="/img/HubstarConnect.png"
@@ -78,7 +95,7 @@ export default function SomethingIveBuilt() {
             "Internationalization (i18n)",
             "XState",
           ]}
-          isReversed={false}
+          isReversed={true}
           router={router}
         />
 
@@ -95,7 +112,7 @@ export default function SomethingIveBuilt() {
             "Scalable Architecture",
             "Full-Stack Development",
           ]}
-          isReversed={true}
+          isReversed={false}
           router={router}
         />
 
@@ -112,7 +129,7 @@ export default function SomethingIveBuilt() {
             "Email Notifications",
             "Auto‑Counselor allocation",
           ]}
-          isReversed={false}
+          isReversed={true}
           router={router}
         />
 
@@ -129,7 +146,7 @@ export default function SomethingIveBuilt() {
             "QR Check-ins",
             "Temperature Screening",
           ]}
-          isReversed={true}
+          isReversed={false}
           router={router}
         />
       </div>
@@ -166,6 +183,19 @@ function ProjectCard({
   const highlightText = (text: string) => {
     // Define terms to highlight
     const highlightTerms = [
+      "no-code editor",
+      "editor-bridge",
+      "template-JSON pipeline",
+      "runtime-interpreted data",
+      "ShopForge",
+      "edge-rendering engine",
+      "Hono",
+      "HTMX",
+      "Alpine",
+      "sub-100ms TTFB",
+      "₹6–10 crore",
+      "₹30 crore",
+      "$3.5M",
       "HubStar Connect",
       "UK Home Office",
       "DP World",
